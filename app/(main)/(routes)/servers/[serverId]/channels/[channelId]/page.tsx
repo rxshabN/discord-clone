@@ -8,13 +8,15 @@ import { auth } from "@clerk/nextjs/server";
 import { ChannelType } from "@prisma/client";
 import { redirect } from "next/navigation";
 
+type Params = Promise<{ channelId: string; serverId: string }>;
+
 interface ChannelIdPageProps {
-  params: {
-    channelId: string;
-    serverId: string;
-  };
+  params: Params;
 }
 const ChannelIdPage = async ({ params }: ChannelIdPageProps) => {
+  // Await the params, since they are now a promise
+  const resolvedParams = await params;
+  const { channelId, serverId } = resolvedParams;
   const profile = await currentProfile();
   if (!profile) {
     const authInstance = await auth();
@@ -22,12 +24,12 @@ const ChannelIdPage = async ({ params }: ChannelIdPageProps) => {
   }
   const channel = await db.channel.findUnique({
     where: {
-      id: params.channelId,
+      id: channelId,
     },
   });
   const member = await db.member.findFirst({
     where: {
-      serverId: params.serverId,
+      serverId: serverId,
       profileId: profile.id,
     },
   });

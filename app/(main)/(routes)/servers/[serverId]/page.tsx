@@ -3,12 +3,17 @@ import { currentProfile } from "@/lib/current-profile";
 import { db } from "@/lib/db";
 import { auth } from "@clerk/nextjs/server";
 
+type Params = Promise<{
+  serverId: string;
+}>;
+
 interface ServerIdPageProps {
-  params: {
-    serverId: string;
-  };
+  params: Params;
 }
+
 const ServerIdPage = async ({ params }: ServerIdPageProps) => {
+  // Await params since it is now a promise
+  const { serverId } = await params;
   const profile = await currentProfile();
   if (!profile) {
     const authInstance = await auth();
@@ -16,7 +21,7 @@ const ServerIdPage = async ({ params }: ServerIdPageProps) => {
   }
   const server = await db.server.findUnique({
     where: {
-      id: params.serverId,
+      id: serverId,
       members: {
         some: {
           profileId: profile.id,
@@ -40,7 +45,7 @@ const ServerIdPage = async ({ params }: ServerIdPageProps) => {
   }
   return (
     <LoadingRedirect
-      serverId={params.serverId}
+      serverId={serverId}
       initialChannelId={initialChannel?.id}
       shouldRedirect={initialChannel?.name === "general"}
     />
