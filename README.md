@@ -1,11 +1,11 @@
-
-# Discord Clone
+# Discord Clone by RishabN
 
 A full-featured real-time chat application inspired by Discord. This clone provides messaging, audio, and video chat capabilities using [LiveKit](https://livekit.io/), with user authentication handled by [Clerk](https://clerk.dev/). Built with Next.js, Prisma, and Tailwind CSS for a responsive and modern user interface.
 
 **Live Demo**: [https://discord-clone-rishabn.up.railway.app](https://discord-clone-rishabn.up.railway.app)
 
 ## Table of Contents
+
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Setup and Installation](#setup-and-installation)
@@ -43,17 +43,20 @@ A full-featured real-time chat application inspired by Discord. This clone provi
 ### Installation Steps
 
 1. **Clone the repository**:
+
    ```bash
    git clone https://github.com/yourusername/discord-clone.git
    cd discord-clone
    ```
 
 2. **Install dependencies**:
+
    ```bash
    npm install
    ```
 
 3. **Environment Variables**: Create a `.env` file in the root directory and add the following variables:
+
    ```plaintext
    DATABASE_URL=<your_database_url>
    LIVEKIT_API_KEY=<your_livekit_api_key>
@@ -65,11 +68,13 @@ A full-featured real-time chat application inspired by Discord. This clone provi
 
 4. **Database Setup**:
    Run Prisma migrations to create the necessary tables.
+
    ```bash
    npx prisma migrate dev
    ```
 
 5. **Start the development server**:
+
    ```bash
    npm run dev
    ```
