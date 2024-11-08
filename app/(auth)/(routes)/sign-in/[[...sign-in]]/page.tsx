@@ -7,7 +7,9 @@ export default function Page() {
         <div className="absolute inset-0 bg-overlay-pattern opacity-45 bg-overlay bg-repeat mix-blend-overlay animate-blurEffect"></div>
       </div>
       <div className="relative flex flex-col gap-y-8 justify-center items-center">
-        <span className="text-8xl font-mono">Hi there!</span>
+        <span className="md:text-8xl font-mono text-center text-6xl">
+          Hi there!
+        </span>
         <SignIn />
       </div>
     </div>

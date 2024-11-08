@@ -21,6 +21,12 @@ body {
   }
 }
 
+@media (max-width: 767px) {
+  .mssg {
+    font-size: 0.75rem;
+  }
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
