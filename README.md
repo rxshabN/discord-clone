@@ -96,6 +96,3 @@ A full-featured real-time chat application inspired by Discord. This clone provi
 1. **Clerk Setup**: Ensure your Clerk API keys are properly configured in `.env`.
 2. **Error Handling**: Basic error handling is implemented, but improvements are welcome!
 3. **Contribution**: Contributions are welcome! Please open a pull request or issue if you'd like to contribute.
-
----
-
