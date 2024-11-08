@@ -15,7 +15,7 @@ const roleIconMap = {
   [MemberRole.ADMIN]: <ShieldCheck className="ml-2 h-4 w-4 text-green-500" />,
   [MemberRole.MODERATOR]: <ShieldCheck className="ml-2 h-4 w-4 text-black" />,
 };
-export const ServerMember = ({ member, server }: ServerMemberProps) => {
+export const ServerMember = ({ member }: ServerMemberProps) => {
   const params = useParams();
   const router = useRouter();
   const icon = roleIconMap[member.role];
