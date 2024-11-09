@@ -118,9 +118,6 @@ export const ChatItem = ({
               >
                 {member.profile.name}
               </p>
-              <ActionTooltip label={member.role}>
-                {roleIconMap[member.role]}
-              </ActionTooltip>
             </div>
             <span className="text-xs text-zinc-500 dark:text-zinc-400 text-end">
               {timestamp}
