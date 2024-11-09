@@ -110,7 +110,7 @@ export const ChatItem = ({
           <UserAvatar src={member.profile.imageUrl} />
         </div>
         <div className="flex flex-col w-full">
-          <div className="flex items-center gap-x-2">
+          <div className="flex items-center justify-between">
             <div className="flex items-center">
               <p
                 className="font-semibold md:text-sm mssg hover:underline cursor-pointer"
