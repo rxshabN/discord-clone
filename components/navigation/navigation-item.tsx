@@ -15,7 +15,9 @@ export const NavigationItem = ({ id, imageUrl, name }: navigationItemProps) => {
   const params = useParams();
   const router = useRouter();
   const onClick = () => {
-    router.push(`/servers/${id}`);
+    if (params?.serverId !== id) {
+      router.push(`/servers/${id}`);
+    }
   };
   return (
     <ActionTooltip side="right" align="center" label={name}>
@@ -34,7 +36,7 @@ export const NavigationItem = ({ id, imageUrl, name }: navigationItemProps) => {
               "bg-primary/10 text-primary rounded-[16px]"
           )}
         >
-          <Image fill src={imageUrl} alt="Channel" />
+          <Image fill src={imageUrl} alt="Server image" />
         </div>
       </button>
     </ActionTooltip>
