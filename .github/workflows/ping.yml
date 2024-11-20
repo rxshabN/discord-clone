@@ -1,3 +1,44 @@
+# name: Keep Website Alive
+
+# on:
+#   schedule:
+#     - cron: "0 */6 * * *" # Every 6 hours (UTC)
+#   workflow_dispatch:
+
+# jobs:
+#   ping-website:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - name: Ping the website with retries
+#         id: ping
+#         run: |
+#           for i in {1..3}; do
+#             curl -I https://aisuhdiuashdiasudhisa.com && echo "Ping succeeded" && exit 0
+#             echo "Retrying ($i)..."
+#             sleep 5
+#           done
+#           echo "Ping failed after 3 attempts" && exit 1
+
+#       - name: Send email notification
+#         if: failure() # Runs only if the ping step fails
+#         run: |
+#           curl -X POST \
+#           https://api.sendgrid.com/v3/mail/send \
+#           -H "Authorization:Bearer ${{ secrets.SENDGRID_API_KEY }}" \
+#           -H "Content-Type:application/json" \
+#           -d '{
+#             "personalizations":[{
+#               "to":[{"email":"nagwanirishab@gmail.com"}]
+#             }],
+#             "from":{"email":"nagwanirishab@gmail.com"},
+#             "subject":"🚨 Discord-Clone Failure Alert",
+#             "content":[{
+#               "type":"text/plain",
+#               "value":"The GitHub Actions workflow 'Keep Website Alive' detected that your website was unreachable after 3 retry attempts. Restart Supabase database or check the logs on Railway for information."
+#             }]
+#           }'
+
 name: Keep Website Alive
 
 on:
@@ -27,14 +68,4 @@ jobs:
           https://api.sendgrid.com/v3/mail/send \
           -H "Authorization: Bearer ${{ secrets.SENDGRID_API_KEY }}" \
           -H "Content-Type: application/json" \
-          -d '{
-            "personalizations": [{
-              "to": [{"email": "nagwanirishab@gmail.com"}]
-            }],
-            "from": {"email": "nagwanirishab@gmail.com"},
-            "subject": "🚨 Discord-Clone Failure Alert",
-            "content": [{
-              "type": "text/plain",
-              "value": "The GitHub Actions workflow 'Keep Website Alive' detected that your website was unreachable after 3 retry attempts. Restart Supabase database or check the logs on Railway for information."
-            }]
-          }'
+          -d '{"personalizations":[{"to":[{"email":"nagwanirishab@gmail.com"}],"subject":"🚨 Discord-Clone Failure Alert"}],"from":{"email":"nagwanirishab@gmail.com"},"content":[{"type":"text/plain","value":"The GitHub Actions workflow \"Keep Website Alive\" detected that your website was unreachable after 3 retry attempts. Restart Supabase database or check the logs on Railway for information."}]}'
