@@ -32,7 +32,7 @@ jobs:
               "to": [{"email": "nagwanirishab@gmail.com"}],
               "subject": "🚨 Ping Failure Alert: Website Unreachable"
             }],
-            "from": {"email": "your-verified-email@example.com"},
+            "from": {"email": "nagwanirishab@gmail.com"},
             "content": [{
               "type": "text/plain",
               "value": "The GitHub Actions workflow 'Keep Website Alive' detected that your website (https://your-website-url.com) was unreachable after 3 retry attempts. Please check your website for potential issues."
