@@ -35,6 +35,6 @@ jobs:
             "subject": "🚨 Discord-Clone Failure Alert",
             "content": [{
               "type": "text/plain",
-              "value": "The GitHub Actions workflow 'Keep Website Alive' detected that your website (https://aisuhdiuashdiasudhisa.com) was unreachable after 3 retry attempts. Restart Supabase database or check the logs on Railway for information."
+              "value": "The GitHub Actions workflow 'Keep Website Alive' detected that your website was unreachable after 3 retry attempts. Restart Supabase database or check the logs on Railway for information."
             }]
           }'
