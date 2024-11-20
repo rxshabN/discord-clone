@@ -14,7 +14,7 @@ jobs:
         id: ping
         run: |
           for i in {1..3}; do
-            curl -I https://your-website-url.com && echo "Ping succeeded" && exit 0
+            curl -I https://aisuhdiuashdiasudhisa.com && echo "Ping succeeded" && exit 0
             echo "Retrying ($i)..."
             sleep 5
           done
