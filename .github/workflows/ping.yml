@@ -29,12 +29,12 @@ jobs:
           -H "Content-Type: application/json" \
           -d '{
             "personalizations": [{
-              "to": [{"email": "nagwanirishab@gmail.com"}],
-              "subject": "🚨 Ping Failure Alert: Website Unreachable"
+              "to": [{"email": "nagwanirishab@gmail.com"}]
             }],
             "from": {"email": "nagwanirishab@gmail.com"},
+            "subject": "🚨 Discord-Clone Failure Alert",
             "content": [{
               "type": "text/plain",
-              "value": "The GitHub Actions workflow 'Keep Website Alive' detected that your website (https://your-website-url.com) was unreachable after 3 retry attempts. Please check your website for potential issues."
+              "value": "The GitHub Actions workflow 'Keep Website Alive' detected that your website (https://aisuhdiuashdiasudhisa.com) was unreachable after 3 retry attempts. Restart Supabase database or check the logs on Railway for information."
             }]
           }'
