@@ -11,6 +11,7 @@ jobs:
     steps:
       - name: Ping Supabase database
         run: |
-          curl -X POST https://wzsxahnbjeixwlrpwzcd.supabase.co/rest/v1/rpc/ping \
-          -H "Authorization: Bearer ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}" \
-          -H "Content-Type: application/json"
+          curl -X POST 'https://wzsxahnbjeixwlrpwzcd.supabase.co/rest/v1/rpc/ping' \
+          -H "Content-Type: application/json" \
+          -H "apikey: ${{ secrets.SUPABASE_KEY }}" \
+          -H "Authorization: Bearer ${{ secrets.SUPABASE_KEY }}"
