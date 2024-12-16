@@ -2,8 +2,8 @@ name: Ping Supabase Database
 
 on:
   schedule:
-    - cron: "0 */2 * * *"
-  workflow_dispatch:
+    - cron: "0 */2 * * *" # This will run every 2 hours
+  worflow_dispatch:
 
 jobs:
   ping-db:
