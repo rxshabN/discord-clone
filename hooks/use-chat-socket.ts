@@ -49,7 +49,7 @@ export const useChatSocket = ({
     });
     socket.on(addKey, (message: MessageWithMemberWithProfile) => {
       queryClient.setQueryData([queryKey], (oldData: any) => {
-        if (!oldData || oldData.pages.lenght === 0 || !oldData.pages) {
+        if (!oldData || oldData.pages.length === 0 || !oldData.pages) {
           return {
             pages: [
               {
