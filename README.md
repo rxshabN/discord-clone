@@ -2,7 +2,7 @@
 
 A full-featured real-time chat application inspired by Discord. This clone provides messaging, audio, and video chat capabilities using [LiveKit](https://livekit.io/), with user authentication handled by [Clerk](https://clerk.dev/). Built with Next.js, Prisma, and Tailwind CSS for a responsive and modern user interface.
 
-**Live Demo**: [https://discord-clone-rishabn.up.railway.app](https://discord-clone-rishabn.up.railway.app)
+**Live Demo**: [https://discord-clone-rn-1bd20003fd56.herokuapp.com/](https://discord-clone-rn-1bd20003fd56.herokuapp.com/)
 
 ## Table of Contents
 
@@ -29,7 +29,7 @@ A full-featured real-time chat application inspired by Discord. This clone provi
 - **Database**: Prisma ORM (supports PostgreSQL, MySQL, etc.)
 - **Authentication**: Clerk
 - **Real-Time**: WebSocket, Socket.IO
-- **Hosting**: Railway
+- **Hosting**: Heroku
 
 ## Setup and Installation
 
