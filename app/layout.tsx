@@ -28,6 +28,8 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
+<head>        <meta name="apple-mobile-web-app-title" content="Discord Clone" />
+        <link rel="manifest" href="/app/site.webmanifest" /></head>
         <body
           className={cn(
             "antialiased",
