@@ -3,7 +3,7 @@
   "short_name": "Discord Clone",
   "icons": [
     {
-      "src": "app/favicon.ico",
+      "src": "/app/favicon.ico",
       "sizes": "192x192",
       "purpose": "maskable"
     },
