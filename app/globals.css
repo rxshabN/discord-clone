@@ -1,41 +1,161 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-html,
-:root {
-  height: 100%;
-}
+@custom-variant dark (&:is(.dark *));
 
-body {
-  scroll-behavior: smooth;
-  height: 100%;
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
+@theme {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
 
-@media (max-width: 768px) {
-  .sidebar {
-    display: none;
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --background-image-custom-gradient: linear-gradient(
+    0deg,
+    #b388eb,
+    #9f7ce4,
+    #8a6fde,
+    #7b5bd8,
+    #6f47d0,
+    #5c34c4,
+    #4a24b8,
+    #3d1d9f,
+    #341788,
+    #2e1273,
+    #270d5e,
+    #210849,
+    #3d1d9f,
+    #5c34c4,
+    #8a6fde
+  );
+  --background-image-overlay-pattern: radial-gradient(
+      circle at 20% 20%,
+      #ffffff33 20px,
+      transparent 0
+    ),
+    radial-gradient(circle at 80% 40%, #ffffff33 25px, transparent 0),
+    radial-gradient(circle at 40% 80%, #ffffff33 30px, transparent 0),
+    linear-gradient(135deg, transparent 20%, #ffffff33 20%, transparent 40%);
+
+  --background-size-gradient: 400% 400%;
+  --background-size-overlay: 150px 150px, 200px 200px, 250px 250px, 300px 300px;
+
+  --animate-gradient-shift: gradientShift 15s ease infinite;
+  --animate-blur-effect: blurEffect 10s ease-in-out infinite;
+
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    25% {
+      background-position: 50% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    75% {
+      background-position: 50% 100%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  @keyframes blurEffect {
+    0%,
+    100% {
+      filter: blur(5px);
+    }
+    50% {
+      filter: blur(15px);
+    }
   }
 }
 
-@media (max-width: 767px) {
-  .mssg {
-    font-size: 0.75rem;
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
   }
 }
 
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
+@layer utilities {
+  html,
+  :root {
+    height: 100%;
+  }
+
+  body {
+    scroll-behavior: smooth;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @media (max-width: 768px) {
+    .sidebar {
+      display: none;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .mssg {
+      font-size: 0.75rem;
+    }
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
 }
 
 @layer base {
