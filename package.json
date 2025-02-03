@@ -11,7 +11,7 @@
     "@clerk/nextjs": "^6.2.1",
     "@emoji-mart/data": "^1.2.1",
     "@emoji-mart/react": "^1.1.1",
-    "@hookform/resolvers": "^3.9.1",
+    "@hookform/resolvers": "^3.10.0",
     "@livekit/components-react": "^2.6.10",
     "@livekit/components-styles": "^1.1.4",
     "@prisma/client": "^6.0.1",
