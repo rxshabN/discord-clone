@@ -54,7 +54,7 @@
     "uploadthing": "^7.3.0",
     "uuid": "^11.1.0",
     "zod": "^3.24.1",
-    "zustand": "^5.0.3"
+    "zustand": "^5.0.4"
   },
   "devDependencies": {
     "@types/node": "^22.13.8",
