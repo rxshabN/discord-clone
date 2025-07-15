@@ -30,6 +30,10 @@ export default function RootLayout({
       <html lang="en" suppressHydrationWarning>
         <head>
           <meta name="apple-mobile-web-app-title" content="Discord Clone" />
+          <meta
+            name="google-site-verification"
+            content="xcBA29eIXKmCUnX3kDvMlfsrLin00lp20dkpBFcFQ0M"
+          />
         </head>
         <body
           className={cn(
