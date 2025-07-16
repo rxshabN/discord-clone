@@ -32,7 +32,7 @@ export default function RootLayout({
           <meta name="apple-mobile-web-app-title" content="Discord Clone" />
           <meta
             name="google-site-verification"
-            content="xcBA29eIXKmCUnX3kDvMlfsrLin00lp20dkpBFcFQ0M"
+            content="aHfl2qQoUMINMiWMdSU3y2XatWuB3RECA5xw8tafs18"
           />
         </head>
         <body
